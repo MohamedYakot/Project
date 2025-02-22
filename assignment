@@ -1,0 +1,27 @@
+import numpy as np
+
+def tanh(x):
+    return np.tanh(x)
+
+i1, i2 = 0.05, 0.10
+
+b1, b2 = 0.35, 0.60
+
+w1, w2, w3, w4 = 0.15, 0.20, 0.25, 0.30
+w5, w6, w7, w8 = 0.40, 0.45, 0.50, 0.55
+
+h1_input = i1 * w1 + i2 * w3 + b1
+h2_input = i1 * w2 + i2 * w4 + b1
+
+h1_output = tanh(h1_input)
+h2_output = tanh(h2_input)
+
+o1_input = h1_output * w5 + h2_output * w7 + b2
+o2_input = h1_output * w6 + h2_output * w8 + b2
+
+o1_output = tanh(o1_input)
+o2_output = tanh(o2_input)
+
+print(f"w1: {w1}, w2: {w2}, w3: {w3}, w4: {w4}, w5: {w5}, w6: {w6}, w7: {w7}, w8: {w8}")
+print("Hidden Layer Outputs: h1 =", h1_output, ", h2 =", h2_output)
+print("Output Layer Outputs: o1 =", o1_output, ", o2 =", o2_output)
